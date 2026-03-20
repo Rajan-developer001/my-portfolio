@@ -292,9 +292,9 @@ img {
 .home__img img {
   width: 260px;
   height: 260px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: top;   /* 🔥 ADD THIS LINE */
+  border-radius: 50%;   /* 🔥 makes it circle */
+  object-fit: cover;    /* 🔥 keeps image inside circle */
+  object-position: top; /* keeps face visible */
   box-shadow: 0 0 25px rgba(108, 99, 255, 0.7);
   transition: 0.3s;
 }
@@ -1187,4 +1187,91 @@ img {
   .button--white {
     bottom: -4.5rem;
   }
+}
+
+/* ===== NORMAL TEXT ===== */
+.hover-glow {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--title-color);
+    transition: 0.3s ease;
+}
+
+.hover-glow-small {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--title-color);
+    transition: 0.3s ease;
+}
+
+/* ===== HOVER EFFECT (POP + GLOW) ===== */
+.hover-glow:hover,
+.hover-glow-small:hover {
+    transform: scale(1.08); /* POP */
+    
+    text-shadow:
+        0 0 5px #c084fc,
+        0 0 10px #a855f7,
+        0 0 20px #9333ea,
+        0 0 40px #7e22ce;
+
+    cursor: pointer;
+}
+/* ===== GLOBAL TEXT POP EFFECT ===== */
+
+/* Apply to all text elements */
+h1, h2, h3, h4, h5, h6,
+p,
+span,
+a,
+li {
+    transition: all 0.3s ease;
+}
+
+/* Hover / Touch effect */
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover,
+p:hover,
+span:hover,
+a:hover,
+li:hover {
+    transform: scale(1.05);
+
+    text-shadow:
+        0 0 5px #c084fc,
+        0 0 10px #a855f7,
+        0 0 20px #9333ea;
+
+    cursor: pointer;
+}
+/* For mobile tap */
+h1:active, h2:active, h3:active,
+p:active,
+span:active,
+a:active,
+li:active {
+    transform: scale(1.05);
+}
+/* ===== CURSOR GLOW ===== */
+.cursor-glow {
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(168,85,247,0.4), transparent 60%);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+}
+/* ✅ MOBILE TOUCH EFFECT */
+h1:active, h2:active, h3:active,
+p:active,
+span:active,
+a:active,
+li:active {
+    transform: scale(1.05);
+
+    text-shadow:
+        0 0 5px var(--first-color),
+        0 0 10px var(--first-color),
+        0 0 20px var(--first-color);
 }
