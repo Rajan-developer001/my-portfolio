@@ -1275,3 +1275,28 @@ li:active {
         0 0 10px var(--first-color),
         0 0 20px var(--first-color);
 }
+@media screen and (max-width: 768px) {
+
+  .home__content {
+    grid-template-columns: 1fr;   /* single column */
+    text-align: center;
+  }
+
+  .home__social {
+    display: none; /* optional (remove icons for clean mobile) */
+  }
+
+  .home__img {
+    justify-content: center; /* center image */
+    margin-top: 20px;
+  }
+
+  .home__img img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .home__data {
+    grid-column: 1;
+  }
+}
